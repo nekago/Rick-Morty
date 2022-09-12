@@ -1,6 +1,6 @@
 export interface CharacterListInfo {
-  count: number,
-  pages: number,
-  next: string | null,
-  prev: string | null
+  readonly count: number,
+  readonly pages: number,
+  readonly next: string | null,
+  readonly prev: string | null
 }

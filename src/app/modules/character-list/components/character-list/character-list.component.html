@@ -5,19 +5,17 @@
       </app-header>
   </div>
 
-  <div class="container mx-auto ">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 pb-4 mt-6">
+  <div class="container mx-auto">
+      <div >
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-6"
+          *ngIf="characters$ | async as characters "
+        >
+          <app-character
+            *ngFor="let character of characters.results"
+            [character]="character"
+          ></app-character>
+        </div>
 
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
-          <app-character></app-character>
 
       </div>
   </div>

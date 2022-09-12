@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CharacterListModule} from "./modules/character-list/character-list.module";
 import {CharacterDetailModule} from "./modules/character-detail/character-detail.module";
+import {FormsModule} from "@angular/forms";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -12,8 +14,10 @@ import {CharacterDetailModule} from "./modules/character-detail/character-detail
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     CharacterListModule,
-    CharacterDetailModule
+    CharacterDetailModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

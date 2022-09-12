@@ -1,4 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import {Character} from "../../../../global/entities/character.interface";
+
 
 @Component({
   selector: 'app-character',
@@ -6,4 +8,8 @@ import {Component} from "@angular/core";
 })
 
 export class CharacterComponent {
+  @Input() character!: Character
+
+
+
 }
