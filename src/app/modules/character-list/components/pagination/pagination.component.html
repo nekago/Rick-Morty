@@ -1,0 +1,18 @@
+<div class="flex font-semibold text-xl text-crimson">
+  <button class="mr-2" (click)="!isFirstPage ? changePage('first') : ''">
+    <fa-icon [icon]="faAnglesLeft"></fa-icon>
+  </button>
+  <button class="mr-2" (click)="!isFirstPage ? changePage('prev') : ''">
+    <fa-icon [icon]="faAngleLeft"></fa-icon>
+  </button>
+  <div>{{currenPage}}</div>
+  <div class="mx-1.5">/</div>
+  <div>{{lastPage}}</div>
+  <button class="ml-2" (click)="!isLastPage ? changePage('next') : ''">
+    <fa-icon [icon]="faAngleRight"></fa-icon>
+  </button >
+  <button class="ml-2" (click)="!isLastPage ? changePage('last') : ''">
+    <fa-icon [icon]="faAnglesRight"></fa-icon>
+  </button>
+
+</div>

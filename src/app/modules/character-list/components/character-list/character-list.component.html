@@ -5,6 +5,10 @@
       </app-header>
   </div>
 
+  <div>
+    <app-pagination [currenPage]="currentPage" [lastPage]="lastPage" (modifyCurrentPage)="modifyCurrentPage($event)"></app-pagination>
+  </div>
+
   <div class="container mx-auto">
       <div >
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-6"

@@ -8,7 +8,7 @@ export interface Character {
 }
 
 export interface CharacterParams {
-  readonly id?: number,
+  readonly page?: number,
   readonly name?: string,
   readonly status?: CharacterStatus,
   readonly species?: string,
