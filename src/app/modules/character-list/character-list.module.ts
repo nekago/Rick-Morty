@@ -4,21 +4,19 @@ import {CharacterListComponent} from "./components/character-list/character-list
 import {CharacterComponent} from "./components/character/character.component";
 import {HeaderModule} from "../header/header.module";
 import {HttpClientModule} from "@angular/common/http";
-import {PaginationComponent} from "./components/pagination/pagination.component";
-import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {ControlSectionModule} from "../control-section/control-section.module";
 
 
 @NgModule({
   declarations: [
     CharacterListComponent,
-    CharacterComponent,
-    PaginationComponent
+    CharacterComponent
   ],
   imports: [
     CommonModule,
     HeaderModule,
     HttpClientModule,
-    FontAwesomeModule
+    ControlSectionModule
   ]
 })
 

@@ -1,12 +1,12 @@
 <div class="min-h-screen bg-neutral-600 ">
   <div class="sticky top-0 z-20">
       <app-header>
-        <p class="text-crimson font-serif" rightValue>Cards</p>
+        <p class="text-crimson text-2xl" rightValue>Total characters: {{countCards}}</p>
       </app-header>
   </div>
 
   <div>
-    <app-pagination [currenPage]="currentPage" [lastPage]="lastPage" (modifyCurrentPage)="modifyCurrentPage($event)"></app-pagination>
+    <app-pagination [currentPage]="currentPage" [lastPage]="(characters$ | async) ? (characters$ | async)!.info.pages : 1"></app-pagination>
   </div>
 
   <div class="container mx-auto">
