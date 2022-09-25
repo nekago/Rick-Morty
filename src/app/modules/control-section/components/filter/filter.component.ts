@@ -1,8 +1,17 @@
-import {Component} from "@angular/core";
+import { Component } from '@angular/core';
+import {
+  CharacterGender,
+  CharacterStatus,
+} from '../../../../global/entities/character.interface';
 
 @Component({
   selector: 'app-filter',
-  templateUrl: 'filter.component.html'
+  templateUrl: 'filter.component.html',
 })
+export class FilterComponent {
+  selectedStatus!: string;
+  selectedGender!: string;
 
-export class FilterComponent {}
+  status: CharacterStatus[] = ['Alive', 'Dead', 'unknown'];
+  gender: CharacterGender[] = ['Male', 'Female', 'Genderless', 'unknown'];
+}

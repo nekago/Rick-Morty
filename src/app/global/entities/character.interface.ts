@@ -18,3 +18,8 @@ export interface CharacterParams {
 
 export type CharacterStatus = 'Alive' | 'Dead' | 'unknown';
 export type CharacterGender = 'Male' | 'Female' | 'Genderless' | 'unknown';
+
+// export enum CharacterStatusEnum {
+//   ALIVE = 'Alive',
+//   DEAD = 'Dead',
+// }

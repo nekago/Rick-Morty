@@ -1,4 +1,6 @@
 <div class="grid grid-rows-2 grid-cols-2 sm:grid-rows-1 sm:grid-cols-4 gap-4">
   <input type="text" placeholder="Character name"
          class="h-8 px-3  rounded-xl text-crimson bg-neutral-800 font-semibold focus:outline-0 placeholder:text-white duration-200 ease-in-out">
+  <ng-select placeholder="Alive status" class="" [items]="status" [(ngModel)]="selectedStatus"></ng-select>
+  <ng-select placeholder="Gender" [items]="gender"  [(ngModel)]="selectedGender"></ng-select>
 </div>

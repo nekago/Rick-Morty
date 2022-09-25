@@ -7,11 +7,20 @@ import { ControlSectionComponent } from './components/control-section/control-se
 import { ControlSectionService } from './services/control-section.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PaginationComponent, FilterComponent, ControlSectionComponent],
   exports: [ControlSectionComponent, PaginationComponent, FilterComponent],
-  imports: [CommonModule, FontAwesomeModule, HttpClientModule, RouterModule],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    RouterModule,
+    NgSelectModule,
+    FormsModule,
+  ],
   providers: [ControlSectionService],
 })
 export class ControlSectionModule {}
