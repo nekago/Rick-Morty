@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil, tap } from 'rxjs';
 import { CharactersListData } from '../../../../global/entities/character-list-data.interface';
 import { CharacterListService } from '../../services/character-list.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,10 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 export class CharacterListComponent implements OnInit, OnDestroy {
   private ngDestroy$ = new Subject<void>();
   currentPage!: number;
+  countCards!: number;
+  isLoading: boolean = false;
 
   characters$: Observable<CharactersListData> =
     new Observable<CharactersListData>();
-  countCards!: number;
 
   constructor(
     private characterListService: CharacterListService,
@@ -26,7 +27,10 @@ export class CharacterListComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngDestroy$))
       .subscribe((params) => {
         this.currentPage = +params['page'] || 1;
-        this.characters$ = this.characterListService.getCharacterList(params);
+        this.isLoading = true;
+        this.characters$ = this.characterListService
+          .getCharacterList(params)
+          .pipe(tap(() => (this.isLoading = false)));
       });
   }
 

@@ -1,17 +1,21 @@
 <div class="flex font-semibold text-xl text-crimson">
-  <button class="mr-2 disabled:opacity-60"  [disabled]="currentPage == 1" [routerLink]="'/characters'" [queryParams]="{page: 1}">
+  <button class="mr-2 disabled:opacity-60" [disabled]="currentPage == 1" [routerLink]="'/characters'"
+          [queryParams]="{page: 1}">
     <fa-icon [icon]="faAnglesLeft"></fa-icon>
   </button>
-  <button class="mr-2 disabled:opacity-60" [disabled]="currentPage == 1" [routerLink]="'/characters'" [queryParams]="{page: currentPage - 1}">
+  <button class="mr-2 disabled:opacity-60" [disabled]="currentPage == 1" [routerLink]="'/characters'"
+          [queryParams]="{page: currentPage - 1}">
     <fa-icon [icon]="faAngleLeft"></fa-icon>
   </button>
   <div>{{currentPage}}</div>
   <div class="mx-1.5">/</div>
   <div>{{lastPage}}</div>
-  <button class="ml-2 disabled:opacity-60" [disabled]="currentPage == lastPage" [routerLink]="'/characters'" [queryParams]="{page: currentPage + 1}">
+  <button class="ml-2 disabled:opacity-60" [disabled]="currentPage == lastPage" [routerLink]="'/characters'"
+          [queryParams]="{page: currentPage + 1}">
     <fa-icon [icon]="faAngleRight"></fa-icon>
-  </button >
-  <button class="ml-2 disabled:opacity-60" [disabled]="currentPage == lastPage"  [routerLink]="'/characters'" [queryParams]="{page: lastPage}">
+  </button>
+  <button class="ml-2 disabled:opacity-60" [disabled]="currentPage == lastPage" [routerLink]="'/characters'"
+          [queryParams]="{page: lastPage}">
     <fa-icon [icon]="faAnglesRight"></fa-icon>
   </button>
 
