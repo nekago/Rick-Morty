@@ -1,5 +1,6 @@
+<div *ngIf="character$ | async as character">
 <app-header>
-  <p rightValue>NAME</p>
+  <p rightValue>{{character.name}}</p>
 </app-header>
 
 
@@ -8,3 +9,4 @@
   <app-character-details-control></app-character-details-control>
 </app-control-section>
 <app-loader *ngIf="isLoading"></app-loader>
+</div>

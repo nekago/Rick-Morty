@@ -9,6 +9,16 @@ import { CharacterParams } from '../../../global/entities/character.interface';
   providedIn: 'root',
 })
 export class CharacterListService {
+  private lastCharacterId!: number;
+
+  public set setLastCharacterId(id: number) {
+    this.lastCharacterId = this.lastCharacterId || id;
+  }
+
+  public get getLastCharacterId(): number {
+    return this.lastCharacterId;
+  }
+
   constructor(private apiService: ApiService) {}
 
   public getCharacterList(

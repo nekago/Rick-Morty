@@ -31,10 +31,11 @@ export class CharacterListComponent implements OnInit, OnDestroy {
         this.characters$ = this.characterListService
           .getCharacterList(params)
           .pipe(tap(() => (this.isLoading = false)));
+        this.characters$.pipe(takeUntil(this.ngDestroy$)).subscribe((data) => {
+          this.countCards = data.info.count;
+          this.characterListService.setLastCharacterId = this.countCards;
+        });
       });
-    this.characters$.pipe(takeUntil(this.ngDestroy$)).subscribe((data) => {
-      this.countCards = data.info.count;
-    });
   }
 
   ngOnDestroy() {
