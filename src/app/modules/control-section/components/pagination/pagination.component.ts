@@ -33,7 +33,6 @@ export class PaginationComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngDestroy$))
       .subscribe((params) => {
         this.params = params;
-        console.log(params);
       });
   }
 
@@ -43,25 +42,24 @@ export class PaginationComponent implements OnInit, OnDestroy {
   }
 
   public firstPage() {
-    this.setQueryParams({ page: 1, ...this.params });
+    this.setQueryParams({ ...this.params, page: 1 });
   }
+
   public nextPage() {
     this.setQueryParams({ ...this.params, page: this.currentPage + 1 });
   }
+
   public prevPage() {
-    this.setQueryParams({ page: this.currentPage - 1, ...this.params });
+    this.setQueryParams({ ...this.params, page: this.currentPage - 1 });
   }
+
   public endPage() {
-    this.setQueryParams({ page: this.lastPage, ...this.params });
+    this.setQueryParams({ ...this.params, page: this.lastPage });
   }
+
   private setQueryParams(params: CharacterParams) {
     this.router.navigate(['/characters'], {
-      queryParams: {
-        page: params.page,
-        name: undefined,
-        status: undefined,
-        gender: undefined,
-      },
+      queryParams: params,
     });
   }
 }

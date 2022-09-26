@@ -32,6 +32,9 @@ export class CharacterListComponent implements OnInit, OnDestroy {
           .getCharacterList(params)
           .pipe(tap(() => (this.isLoading = false)));
       });
+    this.characters$.pipe(takeUntil(this.ngDestroy$)).subscribe((data) => {
+      this.countCards = data.info.count;
+    });
   }
 
   ngOnDestroy() {

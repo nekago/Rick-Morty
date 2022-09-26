@@ -1,12 +1,12 @@
-import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
-import {CharacterListComponent} from "./components/character-list/character-list.component";
-import {CharacterComponent} from "./components/character/character.component";
-import {HeaderModule} from "../header/header.module";
-import {HttpClientModule} from "@angular/common/http";
-import {ControlSectionModule} from "../control-section/control-section.module";
-import {LoaderModule} from "../../global/modules/loader/loader.module";
-
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CharacterListComponent } from './components/character-list/character-list.component';
+import { CharacterComponent } from './components/character/character.component';
+import { HeaderModule } from '../header/header.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ControlSectionModule } from '../control-section/control-section.module';
+import { LoaderModule } from '../../global/modules/loader/loader.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CharacterListComponent, CharacterComponent],
@@ -16,6 +16,7 @@ import {LoaderModule} from "../../global/modules/loader/loader.module";
     HttpClientModule,
     ControlSectionModule,
     LoaderModule,
+    RouterModule,
   ],
 })
 export class CharacterListModule {}

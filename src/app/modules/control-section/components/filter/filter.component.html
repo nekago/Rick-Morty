@@ -2,11 +2,17 @@
   <input type="text" placeholder="Character name"
          class="h-8 px-3  rounded-xl text-crimson bg-neutral-800 font-semibold focus:outline-0 placeholder:text-white duration-200 ease-in-out"
          [(ngModel)]="filterParams.name"
-         (input)="selectQueryParams('name')"
+         (input)="selectQueryParams()"
   >
   <ng-select placeholder="Alive status" [items]="statuses" [(ngModel)]="filterParams.status"
-             (change)="selectQueryParams('status')"></ng-select>
+             (change)="selectQueryParams()"></ng-select>
   <ng-select placeholder="Gender" [items]="genders" [(ngModel)]="filterParams.gender"
-             (change)="selectQueryParams('gender')"></ng-select>
+             (change)="selectQueryParams()"></ng-select>
+
+  <button
+    class="btn"
+    (click)="resetQueryParams()">
+    Reset filter
+  </button>
 
 </div>

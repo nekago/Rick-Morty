@@ -4,14 +4,14 @@
     <fa-icon [icon]="faAnglesLeft"></fa-icon>
   </button>
   <button class="mr-2 disabled:opacity-60" [disabled]="currentPage == 1"
-          (click)="nextPage()">
+          (click)="prevPage()">
     <fa-icon [icon]="faAngleLeft"></fa-icon>
   </button>
   <div>{{currentPage}}</div>
   <div class="mx-1.5">/</div>
   <div>{{lastPage}}</div>
   <button class="ml-2 disabled:opacity-60" [disabled]="currentPage == lastPage"
-          (click)="prevPage()">
+          (click)="nextPage()">
     <fa-icon [icon]="faAngleRight"></fa-icon>
   </button>
   <button class="ml-2 disabled:opacity-60" [disabled]="currentPage == lastPage"
