@@ -1,2 +1,2 @@
-export const API_MAIN_URL: string = 'https://rickandmortyapi.com/api/character'
-export const API_CHARACTER_URL: string = 'character'
+export const API_CHARACTER_LIST: string = '/character';
+export const API_CHARACTER_SINGLE: string = '/character/';

@@ -9,10 +9,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import {
+  CharacterDetailsControlComonent
+} from "./components/character-details-control/character-details-control.comonent";
 
 @NgModule({
-  declarations: [PaginationComponent, FilterComponent, ControlSectionComponent],
-  exports: [ControlSectionComponent, PaginationComponent, FilterComponent],
+  declarations: [
+    PaginationComponent,
+    FilterComponent,
+    ControlSectionComponent,
+    CharacterDetailsControlComonent,
+  ],
+  exports: [
+    ControlSectionComponent,
+    PaginationComponent,
+    FilterComponent,
+    CharacterDetailsControlComonent,
+  ],
   imports: [
     CommonModule,
     FontAwesomeModule,

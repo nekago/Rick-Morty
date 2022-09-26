@@ -2,8 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+import { EnvironmentInterface } from '../app/global/entities/environment.interface';
+
+export const environment: EnvironmentInterface = {
+  production: false,
+  apiUrl: 'https://rickandmortyapi.com/api',
 };
 
 /*

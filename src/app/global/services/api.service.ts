@@ -1,22 +1,28 @@
-import {Injectable} from "@angular/core";
-import {CharacterParams} from "../entities/character.interface";
-import {Observable} from "rxjs";
-import {CharactersListData} from "../entities/character-list-data.interface";
-import {API_MAIN_URL} from "../constants/api";
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-  }
-
-  public getAll(params?: CharacterParams): Observable<CharactersListData> {
-    return this.http.get<CharactersListData>(API_MAIN_URL, {
-      params: {...params}
-    })
+  public get<T>(
+    url: string,
+    params?:
+      | HttpParams
+      | {
+          [param: string]:
+            | string
+            | number
+            | boolean
+            | ReadonlyArray<string | number | boolean>;
+        }
+  ): Observable<T> {
+    return this.http.get<T>(`${environment.apiUrl}${url}`, {
+      params: { ...params },
+    });
   }
 }
