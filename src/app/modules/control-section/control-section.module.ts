@@ -10,21 +10,21 @@ import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import {
-  CharacterDetailsControlComonent
-} from "./components/character-details-control/character-details-control.comonent";
+  CharacterDetailsControlComponent
+} from "./components/character-details-control/character-details-control.component";
 
 @NgModule({
   declarations: [
     PaginationComponent,
     FilterComponent,
     ControlSectionComponent,
-    CharacterDetailsControlComonent,
+    CharacterDetailsControlComponent,
   ],
   exports: [
     ControlSectionComponent,
     PaginationComponent,
     FilterComponent,
-    CharacterDetailsControlComonent,
+    CharacterDetailsControlComponent,
   ],
   imports: [
     CommonModule,
