@@ -17,8 +17,8 @@ export class CharacterListService {
   ): Observable<CharactersListData> {
     return this.http
       .get<CharactersListData>(API_MAIN_URL, {
-        params: new HttpParams().appendAll(params),
+        params: new HttpParams().appendAll({ ...params }),
       })
-      .pipe(delay(1000));
+      .pipe(delay(50));
   }
 }

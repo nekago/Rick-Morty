@@ -13,7 +13,6 @@ export class CharacterListComponent implements OnInit, OnDestroy {
   currentPage!: number;
   countCards!: number;
   isLoading: boolean = false;
-  aLoading: boolean = false;
 
   characters$: Observable<CharactersListData> =
     new Observable<CharactersListData>();

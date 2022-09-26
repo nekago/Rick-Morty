@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
     RouterModule,
     NgSelectModule,
     FormsModule,

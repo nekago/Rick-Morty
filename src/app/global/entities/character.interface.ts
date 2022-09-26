@@ -8,18 +8,24 @@ export interface Character {
 }
 
 export interface CharacterParams {
-  // readonly page?: number,
-  // readonly name?: string,
-  // readonly status?: CharacterStatus,
-  // readonly species?: string,
-  // readonly gender?: CharacterGender
-  [key: string]: any;
+  readonly page?: number;
+  readonly name?: string;
+  readonly status?: CharacterStatus;
+  readonly species?: string;
+  readonly gender?: CharacterGender;
+}
+
+export interface CharacterFilter {
+  name: string | undefined;
+  gender: CharacterGender | undefined;
+  status: CharacterStatus | undefined;
 }
 
 export type CharacterStatus = 'Alive' | 'Dead' | 'unknown';
 export type CharacterGender = 'Male' | 'Female' | 'Genderless' | 'unknown';
+export type FilterField = 'status' | 'gender' | 'name';
 
-// export enum CharacterStatusEnum {
-//   ALIVE = 'Alive',
-//   DEAD = 'Dead',
+// export enum CharacterStatusEnum {',
+// //   DEAD = 'Dead',
+//   ALIVE = 'Alive
 // }
