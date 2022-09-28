@@ -1,15 +1,70 @@
-<div *ngIf="character$ | async as character">
 <app-header>
-  <p rightValue class="text-crimson">{{character.name}}</p>
+  <p rightValue class="text-crimson"></p>
 </app-header>
 
-  <div class="sticky top-[48px] sm:top-[56px] z-10 ">
+<div class="sticky top-[38px] sm:top-[56px] z-10 ">
 
-<app-control-section>
-  <app-character-details-control></app-character-details-control>
-</app-control-section>
-<app-loader *ngIf="isLoading"></app-loader>
+  <app-control-section>
+    <app-character-details-control></app-character-details-control>
+  </app-control-section>
+  <app-loader *ngIf="isLoading"></app-loader>
 </div>
 
+<div class="container mx-auto mt-8 ">
+  <div *ngIf="character$ | async as character">
+    <div class="mb-4 flex flex-col justify-center md:flex-row rounded bg-neutral-700 duration-200 ease-in-out">
+      <img class="w-full sm:w-auto rounded-t-2xl md:rounded-t-none md:rounded-l-2xl md:rounded-tl-2xl"
+           [src]="character.image"
+            [alt]="character.name"
+      >
+      <div class="p-4 md:overflow-hidden">
+        <div
+          class="text-2xl md:text-3xl font-bold transition-colors duration-200 ease-in-out text-white">{{character.name}}
+        </div>
+        <div class="mt-2 text-md sm:text-xl flex">
+          <div class="flex">
+            <div class="w-4 flex justify-center mr-2">
+              <fa-icon class="text-crimson" [icon]="faHeart"></fa-icon>
+            </div>
+            <div
+              class="mr-4 w-40 sm:w-52 whitespace-nowrap font-bold text-amber-50 transition-colors duration-200 ease-in-out">
+              Status:
+            </div>
+          </div>
+          <div
+            class="whitespace-nowrap overflow-auto capitalize text-amber-50 transition-colors duration-200 ease-in-out">{{character.status}}</div>
+        </div>
+        <div class="mt-2 text-md sm:text-xl flex">
+          <div class="flex">
+            <div class="w-4 flex justify-center mr-2">
+              <fa-icon class="text-crimson" [icon]="faVenusMars"></fa-icon>
+            </div>
+            <div
+              class="mr-4 w-40 sm:w-52 whitespace-nowrap font-bold text-amber-50 transition-colors duration-200 ease-in-out">
+              Gender:
+            </div>
+          </div>
+          <div
+            class="whitespace-nowrap overflow-auto capitalize text-amber-50 transition-colors duration-200 ease-in-out">{{character.gender}}</div>
+        </div>
+        <div class="mt-2 text-md sm:text-xl flex">
+          <div class="flex">
+            <div class="w-4 flex justify-center mr-2">
+              <fa-icon class="text-crimson" [icon]="faGhost"></fa-icon>
+            </div>
+            <div
+              class="mr-4 w-40 sm:w-52 whitespace-nowrap font-bold text-amber-50 transition-colors duration-200 ease-in-out">
+              Species:
+            </div>
+          </div>
+          <div
+            class="whitespace-nowrap overflow-auto capitalize text-amber-50 transition-colors duration-200 ease-in-out">{{character.species}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
 
