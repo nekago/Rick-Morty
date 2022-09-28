@@ -1,32 +1,43 @@
 <div class="min-h-screen bg-neutral-600 ">
   <div class="sticky top-0 z-20">
     <app-header>
-      <p class="text-crimson text-2xl" rightValue>Total characters: {{countCards}}</p>
+      <p class="text-crimson text-2xl" rightValue>Total characters: {{characterListData?.info?.count || 0}}</p>
     </app-header>
   </div>
 
   <app-control-section>
     <div class="flex flex-col gap-4 lg:flex-row justify-between">
-    <app-filter></app-filter>
-    <app-pagination class="my-0 mx:auto lg:m-0" [currentPage]="currentPage"
-                    *ngIf="(characters$ | async) as characters"
-                    [lastPage]="characters?.info ? characters.info.pages : 1"></app-pagination>
+      <app-filter></app-filter>
+      <app-pagination class="my-0 mx:auto lg:m-0" [currentPage]="currentPage"
+                      *ngIf="characterListData as characters"
+                      [lastPage]="characters?.info ? characters.info.pages : 1"></app-pagination>
     </div>
   </app-control-section>
 
   <app-loader *ngIf="isLoading"></app-loader>
-  <div class="container mx-auto">
+  <div class="container mx-auto" *ngIf="characterListData && !characterListError; else errorTemplate">
     <div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-6"
-           *ngIf="(characters$ | async) as characters">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-6">
         <app-character
-          *ngFor="let character of characters.results"
+          *ngFor="let character of characterListData.results"
           [character]="character"
         ></app-character>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #errorTemplate>
+  <div class="container">
+    <div class="absolute top-1/2 left-0 right-0">
+      <div class="text-center relative">
+        <div
+          class="text-center text-3xl sm:text-5xl md:text-6xl text-crimson font-semibold capitalize absolute top-1/2 left-0 right-0">{{characterListError?.error?.error}}</div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
 
 
 

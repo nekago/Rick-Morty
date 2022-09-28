@@ -5,7 +5,7 @@
 
 @layer components {
   .btn {
-    @apply px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent rounded-lg  bg-crimson;
+    @apply bg-crimson hover:bg-neutral-900 text-white font-bold py-2 px-4 rounded-l ;
   }
 
 }
