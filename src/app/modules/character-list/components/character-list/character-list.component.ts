@@ -30,7 +30,6 @@ export class CharacterListComponent implements OnInit, OnDestroy {
       .subscribe(async (params) => {
         this.currentPage = +params['page'] || 1;
         this.isLoading = true;
-        // @ts-ignore
         await this.getCharacterList(params);
       });
   }

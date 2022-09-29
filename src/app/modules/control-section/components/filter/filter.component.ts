@@ -6,6 +6,7 @@ import {
 } from '../../../../global/entities/character.interface';
 import { CharacterListService } from '../../../character-list/services/character-list.service';
 import { Router } from '@angular/router';
+import { debounce } from 'lodash';
 
 @Component({
   selector: 'app-filter',
@@ -36,6 +37,11 @@ export class FilterComponent {
       queryParams: this.filterParams,
     });
   }
+
+  selectQueryParamsByName: CallableFunction = debounce(
+    this.selectQueryParams,
+    300
+  );
 
   resetQueryParams() {
     this.route.navigate(['/characters']);
