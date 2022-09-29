@@ -18,10 +18,10 @@ export class PaginationComponent implements OnInit, OnDestroy {
   private ngDestroy$ = new Subject<void>();
   private params!: CharacterParams;
 
-  faAngleLeft = faAngleLeft;
-  faAnglesLeft = faAnglesLeft;
-  faAngleRight = faAngleRight;
-  faAnglesRight = faAnglesRight;
+  public faAngleLeft = faAngleLeft;
+  public faAnglesLeft = faAnglesLeft;
+  public faAngleRight = faAngleRight;
+  public faAnglesRight = faAnglesRight;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,

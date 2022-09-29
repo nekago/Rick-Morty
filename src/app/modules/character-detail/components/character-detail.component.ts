@@ -20,9 +20,9 @@ export class CharacterDetailComponent implements OnInit, OnDestroy {
   public character$: Observable<Character> = new Observable<Character>();
   public isLoading: boolean = false;
 
-  faHeart = faHeart;
-  faVenusMars = faVenusMars;
-  faGhost = faGhost;
+  public faHeart = faHeart;
+  public faVenusMars = faVenusMars;
+  public faGhost = faGhost;
 
   constructor(
     private characterDetailService: CharacterDetailService,

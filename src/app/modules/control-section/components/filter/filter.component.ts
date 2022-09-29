@@ -13,10 +13,15 @@ import { debounce } from 'lodash';
   templateUrl: 'filter.component.html',
 })
 export class FilterComponent {
-  statuses: CharacterStatus[] = ['Alive', 'Dead', 'unknown'];
-  genders: CharacterGender[] = ['Male', 'Female', 'Genderless', 'unknown'];
+  public statuses: CharacterStatus[] = ['Alive', 'Dead', 'unknown'];
+  public genders: CharacterGender[] = [
+    'Male',
+    'Female',
+    'Genderless',
+    'unknown',
+  ];
 
-  filterParams: CharacterFilter = FilterComponent.emptyFilterParams;
+  public filterParams: CharacterFilter = FilterComponent.emptyFilterParams;
 
   private static get emptyFilterParams(): CharacterFilter {
     return {
@@ -31,19 +36,19 @@ export class FilterComponent {
     private readonly route: Router
   ) {}
 
-  selectQueryParams() {
+  public selectQueryParams() {
     this.filterParams.name = this.filterParams.name || undefined;
     this.route.navigate(['/characters'], {
       queryParams: this.filterParams,
     });
   }
 
-  selectQueryParamsByName: CallableFunction = debounce(
+  public selectQueryParamsByName: CallableFunction = debounce(
     this.selectQueryParams,
     300
   );
 
-  resetQueryParams() {
+  public resetQueryParams() {
     this.route.navigate(['/characters']);
     this.filterParams = FilterComponent.emptyFilterParams;
   }

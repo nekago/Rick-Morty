@@ -10,13 +10,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class CharacterListComponent implements OnInit, OnDestroy {
   private ngDestroy$ = new Subject<void>();
-  currentPage!: number;
-  countCards!: number;
-  isLoading: boolean = false;
+  public currentPage!: number;
+  public isLoading: boolean = false;
   public characterListData: CharactersListData | null = null;
   public characterListError: any | null = null;
 
-  characters$: Observable<CharactersListData> =
+  public characters$: Observable<CharactersListData> =
     new Observable<CharactersListData>();
 
   constructor(

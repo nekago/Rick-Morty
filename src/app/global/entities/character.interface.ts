@@ -23,9 +23,3 @@ export interface CharacterFilter {
 
 export type CharacterStatus = 'Alive' | 'Dead' | 'unknown';
 export type CharacterGender = 'Male' | 'Female' | 'Genderless' | 'unknown';
-export type FilterField = 'status' | 'gender' | 'name';
-
-// export enum CharacterStatusEnum {',
-// //   DEAD = 'Dead',
-//   ALIVE = 'Alive
-// }

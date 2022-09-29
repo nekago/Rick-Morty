@@ -7,8 +7,8 @@ import { CharacterListService } from '../../../character-list/services/character
   templateUrl: 'character-details-control.component.html',
 })
 export class CharacterDetailsControlComponent implements OnInit {
-  currentId!: number;
-  lastId!: number;
+  public currentId!: number;
+  public lastId!: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
